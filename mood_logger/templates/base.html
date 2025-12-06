@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mood Logger</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a> |
+        <a href="{{ url_for('page1') }}">Page 1</a> |
+        <a href="{{ url_for('page2') }}">Page 2</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

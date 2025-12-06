@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Mood Summary{% endblock %}
+
+{% block content %}
+<h1>Mood Summary</h1>
+<p>Total entries: {{ mood_entries|length }}</p>
+
+<h2>Moods:</h2>
+<ul>
+    {% for entry in mood_entries %}
+        <li>{{ entry.mood }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}

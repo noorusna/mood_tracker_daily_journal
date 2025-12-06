@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Mood Frequency Table (Last 7 Days)</h1>
+
+<form method="POST">
+    <label>Enter your mood:</label>
+    <input type="text" name="mood" required>
+    <button type="submit">Add Mood</button>
+</form>
+
+{% if mood_counts %}
+    <table>
+        <tr>
+            <th>Mood</th>
+            <th>Count</th>
+        </tr>
+        {% for mood, count in mood_counts.items() %}
+        <tr>
+            <td>{{ mood }}</td>
+            <td>{{ count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><strong>Most Frequent Mood:</strong> {{ most_frequent }}</p>
+{% else %}
+    <p>No mood entries yet for the last 7 days.</p>
+{% endif %}
+{% endblock %}
+

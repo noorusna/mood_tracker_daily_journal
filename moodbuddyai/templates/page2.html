@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Tips for Mood{% endblock %}
+
+{% block content %}
+<h1>Tips for a Better Mood</h1>
+<ul>
+    <li>Take a few deep breaths.</li>
+    <li>Go for a short walk outside.</li>
+    <li>Listen to your favorite music.</li>
+    <li>Write down your thoughts in a journal.</li>
+</ul>
+<a href="{{ url_for('index') }}">Back to Dashboard</a>
+{% endblock %}

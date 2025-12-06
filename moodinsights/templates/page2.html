@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Summary Page</h1>
+<p>Total moods logged: {{ mood_entries|length }}</p>
+<ul>
+    {% for entry in mood_entries %}
+        <li>{{ entry.date.strftime("%Y-%m-%d %H:%M") }} - {{ entry.mood }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
